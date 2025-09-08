@@ -1,0 +1,77 @@
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Fondo y estructura ===== */
+body {
+  background-color: #f4c27f; /* Color cálido estilo galleta */
+  color: #4e2e1c; /* Marrón oscuro para contraste */
+  text-align: center;
+}
+
+/* ===== Encabezado ===== */
+header {
+  background-color: #5a2d0c; /* Marrón chocolate */
+  color: white;
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Contenedor de cookies ===== */
+.cookies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===== Tarjetas de cookies ===== */
+.cookie-card {
+  background: #fff3e3;
+  border-radius: 15px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Imágenes ===== */
+.cookie-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+/* ===== Títulos de cada cookie ===== */
+.cookie-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #4e2e1c;
+  text-transform: uppercase;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #5a2d0c;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
