@@ -1,29 +1,31 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import Rellenitas from "./pages/Rellenitas.jsx"; // 👈 nueva página
 
-function App() {
+function Home() {
   return (
     <div className="App">
       {/* Navbar */}
       <nav className="navbar">
         <h1>Las mejores galletitas.</h1>
         <ul>
-          <li><a href="#home">Página principal</a></li>
-          <li><a href="#rellentas">Rellenitas</a></li>
+          <li><Link to="/">Página principal</Link></li>
+          <li><Link to="/rellenitas">Rellenitas</Link></li>
           <li><a href="#mas">Más</a></li>
         </ul>
       </nav>
 
       {/* Hero */}
       <header className="hero" id="home">
-        <img src={"/cookie1.png"} />
+        <img src={"/cookie1.png"} alt="cookie" />
         <h2>Rellen¡tas</h2>
       </header>
 
       {/* Sección ¿Qué es? */}
       <section className="section" id="rellentas">
         <div className="text-img">
-          <img src={"/cookie2.png"} />
+          <img src={"/cookie2.png"} alt="cookie" />
           <div className="text">
             <h3>¿Qué es Rellen¡tas?</h3>
             <p>
@@ -42,7 +44,7 @@ function App() {
       {/* Sección sabores */}
       <section className="section">
         <div className="text-img reverse">
-          <img src={"/cookie3.jpg"}/>
+          <img src={"/cookie3.jpg"} alt="cookie" />
           <div className="text">
             <h3>Un poco de Rellen¡tas</h3>
             <p>
@@ -74,5 +76,15 @@ function App() {
   );
 }
 
-export default App;
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/rellenitas" element={<Rellenitas />} />
+      </Routes>
+    </Router>
+  );
+}
 
+export default App;
