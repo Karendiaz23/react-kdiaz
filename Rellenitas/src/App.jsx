@@ -1,21 +1,28 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Rellenitas from "./pages/Rellenitas.jsx"; // 👈 nueva página
+import Rellenitas from "./pages/Rellenitas.jsx"; 
+import Descripciones from "./pages/descripciones.jsx"; // 👈 nueva página
 
+// ✅ Navbar siempre fija
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <h1>Las mejores galletitas.</h1>
+      <ul>
+        <li><Link to="/">Página principal</Link></li>
+        <li><Link to="/rellenitas">Rellenitas</Link></li>
+        <li><Link to="/descripciones">Descripciones</Link></li>
+        <li><a href="#mas">Más</a></li>
+      </ul>
+    </nav>
+  );
+}
+
+// ✅ Página principal
 function Home() {
   return (
-    <div className="App">
-      {/* Navbar */}
-      <nav className="navbar">
-        <h1>Las mejores galletitas.</h1>
-        <ul>
-          <li><Link to="/">Página principal</Link></li>
-          <li><Link to="/rellenitas">Rellenitas</Link></li>
-          <li><a href="#mas">Más</a></li>
-        </ul>
-      </nav>
-
+    <div>
       {/* Hero */}
       <header className="hero" id="home">
         <img src={"/cookie1.png"} alt="cookie" />
@@ -76,13 +83,18 @@ function Home() {
   );
 }
 
+// ✅ App con Navbar fija + contenido en <main>
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/rellenitas" element={<Rellenitas />} />
-      </Routes>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/rellenitas" element={<Rellenitas />} />
+          <Route path="/descripciones" element={<Descripciones />} />
+        </Routes>
+      </main>
     </Router>
   );
 }
